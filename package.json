@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "push": "git add . && git commit -m \"update\" && git push"
+    "push": "git add . && git commit -m \"update\" && git push origin main"
   },
   "dependencies": {
     "eslint": "8.36.0",
