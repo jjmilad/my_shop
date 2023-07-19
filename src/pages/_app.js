@@ -36,7 +36,7 @@ export default function App({ Component, pageProps }) {
       <main className={font.className}>
         <Component {...pageProps} />
       </main>
-      <div className='sticky bottom-0 w-full navbar border-t py-3 flex justify-between items-center px-4'>
+      <div className='sticky md:hidden bottom-0 w-full navbar border-t py-3 flex justify-between items-center px-4'>
         <div className='rounded-full h-10 w-10 bg-black'></div><div className='rounded-full h-10 w-10 bg-black'></div><div className='rounded-full h-10 w-10 bg-black'></div><div className='rounded-full h-10 w-10 bg-black'></div><div className='rounded-full h-10 w-10 bg-black'></div>
       </div>
       <NovemberFooter dark={true}/>

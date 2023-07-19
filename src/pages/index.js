@@ -1,7 +1,6 @@
 import IndexBrandsDiv from "@/components/IndexBrandsDiv";
 import IndexPostsDiv from "@/components/IndexPostsDiv";
 import PopularProductsDiv from "@/components/PopularProductsDiv";
-import Image from "next/image";
 import Link from "next/link";
 
 
@@ -13,7 +12,7 @@ export default function Home() {
         <IndexPostsDiv/>
       </div>
 
-      <div className="mt-20 container mx-auto py-5 px-4">
+      <div className="mt-20 container mx-auto py-5">
         <PopularProductsDiv/>
       </div>
 
