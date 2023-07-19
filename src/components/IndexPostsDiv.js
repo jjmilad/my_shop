@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function IndexPost(props) {
     return (
-        <div style={{minWidth:330}} className="bg-helper2 h-40 w-[330px] rounded-lg"><Image className="shadow-md rounded-lg" height={300} width={330} src={props.src}/></div>
+        <div style={{minWidth:330}} className="h-40 w-[330px] rounded-lg"><Image className="shadow-md rounded-lg" height={300} width={330} src={props.src}/></div>
     );
 }
 
