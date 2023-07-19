@@ -13,7 +13,7 @@ function IndexBrand() {
 
 function IndexBrandsDiv() {
     return (
-        <div className="overflow-x-scroll container mx-auto flex md:gap-10 gap-7 pb-3 pt-5 md:pt-8 px-4">
+        <div className="overflow-x-scroll container mx-auto flex md:gap-10 gap-7 pb-3 pt-4 md:pt-8 px-4">
             <IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/><IndexBrand/>
         </div>
     );

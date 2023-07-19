@@ -24,9 +24,7 @@ function Navbar() {
                         <button className='flex md:hidden'><IoMenu style={{color:'black'}} className='w-[30px] h-[28px]'/></button>
                     </div>
                 </div>
-                <div className='flex md:hidden container mx-auto pt-1'>
-                    <input className='rounded-full mx-2 border py-[7px] px-5  w-full outline-none shadow-lg text-[15px]' placeholder='Search any term you like'/>
-                </div>
+                
             </nav>
         </>
     );
