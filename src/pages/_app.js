@@ -2,6 +2,10 @@ import NovemberFooter from '@/components/NovemberFooter'
 import '@/styles/reset.css'
 import '@/styles/globals.css'
 import Head from 'next/head'
+import Navbar from '@/components/Navbar'
+
+import { Inter } from 'next/font/google'
+const font = Inter({ subsets: ['latin'] })
 
 
 export default function App({ Component, pageProps }) {
@@ -9,7 +13,7 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         <meta charSet="UTF-8" />
-        <title>November</title>
+        <title>Takimaster</title>
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,10 +32,11 @@ export default function App({ Component, pageProps }) {
         <meta name="twitter:description" content="Order high quality websites" />
         <meta name="twitter:image" content="/og.webp" />
       </Head>
-      <main>
+      <Navbar/>
+      <main className={font.className}>
         <Component {...pageProps} />
-        <NovemberFooter />
       </main>
+      <NovemberFooter dark={true}/>
     </>
   )
 }
