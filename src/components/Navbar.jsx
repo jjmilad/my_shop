@@ -15,7 +15,7 @@ function Navbar() {
                 <div className='container mx-auto flex justify-between items-center'>
                     <Link href='/' className={font.className+' font-medium text-primary w-[20%] text-[25px] md:text-[33px]'}>Takimaster</Link>
                     <div className='w-[50%]'>
-                        <input className='hidden md:flex rounded-xl border py-[11px] px-5 w-full outline-none shadow-lg text-[15px]' placeholder='Search any term you like'/>
+                        <input className='hidden md:flex rounded-xl border py-[11px] px-5 w-full outline-none shadow-lg text-[14px]' placeholder='Search any term you like'/>
                     </div>
                     <div className='w-[20%] flex justify-end gap-4 items-center'>
                         <p className='text-black text-[15px] hidden md:flex'>Home</p>
@@ -25,7 +25,7 @@ function Navbar() {
                     </div>
                 </div>
                 <div className='flex md:hidden container mx-auto pt-1'>
-                    <input className='rounded-full mx-2 border py-[7px] px-5  w-full outline-none shadow-lg text-[14px]' placeholder='Search any term you like'/>
+                    <input className='rounded-full mx-2 border py-[7px] px-5  w-full outline-none shadow-lg text-[15px]' placeholder='Search any term you like'/>
                 </div>
             </nav>
         </>
