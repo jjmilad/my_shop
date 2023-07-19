@@ -3,10 +3,7 @@ import Image from "next/image";
 function PopularProduct(props){
     return(
         <div style={{minWidth:200}} className="w-[210px] h-[350px] group cursor-pointer">
-            <div className="relative">
-                <Image src={'/3.webp'} height={100} width={210} className="object-cover w-[210px] h-[250px]"/>
-                <div className="bottom-0 top-0 right-0 left-0 absolute hover:image "></div>
-            </div>
+            <Image src={'/3.webp'} height={100} width={210} className="object-cover w-[210px] h-[250px]"/>
             <div className="pt-4">
                 <h1 className="text-[17px] font-normal leading-3 font-serif">Nike Firday 192</h1>
                 <span className="text-[12px] font-serif">Nike</span>
