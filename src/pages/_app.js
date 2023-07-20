@@ -5,8 +5,8 @@ import Head from 'next/head'
 import Navbar from '@/components/Navbar'
 
 import { Inter } from 'next/font/google'
+import MobileFooter from '@/components/MobileFooter'
 const font = Inter({ subsets: ['latin'] })
-
 
 export default function App({ Component, pageProps }) {
   return(
@@ -36,9 +36,7 @@ export default function App({ Component, pageProps }) {
       <main className={font.className}>
         <Component {...pageProps} />
       </main>
-      <div className='sticky md:hidden bottom-0 w-full navbar border-t py-3 flex justify-between items-center px-4'>
-        <div className='rounded-full h-10 w-10 bg-black'></div><div className='rounded-full h-10 w-10 bg-black'></div><div className='rounded-full h-10 w-10 bg-black'></div><div className='rounded-full h-10 w-10 bg-black'></div><div className='rounded-full h-10 w-10 bg-black'></div>
-      </div>
+      <MobileFooter/>
       <NovemberFooter dark={true}/>
     </>
   )

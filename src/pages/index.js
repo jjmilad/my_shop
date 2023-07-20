@@ -1,7 +1,7 @@
 import IndexBrandsDiv from "@/components/IndexBrandsDiv";
 import IndexPostsDiv from "@/components/IndexPostsDiv";
 import PopularProductsDiv from "@/components/PopularProductsDiv";
-import Link from "next/link";
+import ProductsList from "@/components/ProductsList";
 
 
 export default function Home() {
@@ -14,27 +14,7 @@ export default function Home() {
 
       <div className="mt-20 container mx-auto py-5">
         <PopularProductsDiv/>
-      </div>
-
-      <div className="container mx-auto px-4 py-4">
-        <h1 className="font-semibold text-[20px]">All Products</h1>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 pt-4">
-          <Link  href='/products/1' style={{minHeight:200}} className="col-span-1 h-[270px] md:h-[300px] bg-helpe r2 border rounded-xl"></Link>
-          <Link  href='/products/1' style={{minHeight:200}} className="col-span-1 h-[270px] md:h-[300px] bg-helpe r2 border rounded-xl"></Link>
-          <Link  href='/products/1' style={{minHeight:200}} className="col-span-1 h-[270px] md:h-[300px] bg-helpe r2 border rounded-xl"></Link>
-          <Link  href='/products/1' style={{minHeight:200}} className="col-span-1 h-[270px] md:h-[300px] bg-helpe r2 border rounded-xl"></Link>
-          <Link  href='/products/1' style={{minHeight:200}} className="col-span-1 h-[270px] md:h-[300px] bg-helpe r2 border rounded-xl"></Link>
-          <Link  href='/products/1' style={{minHeight:200}} className="col-span-1 h-[270px] md:h-[300px] bg-helpe r2 border rounded-xl"></Link>
-          <Link  href='/products/1' style={{minHeight:200}} className="col-span-1 h-[270px] md:h-[300px] bg-helpe r2 border rounded-xl"></Link>
-          <Link  href='/products/1' style={{minHeight:200}} className="col-span-1 h-[270px] md:h-[300px] bg-helpe r2 border rounded-xl"></Link>
-          <Link  href='/products/1' style={{minHeight:200}} className="col-span-1 h-[270px] md:h-[300px] bg-helpe r2 border rounded-xl"></Link>
-          <Link  href='/products/1' style={{minHeight:200}} className="col-span-1 h-[270px] md:h-[300px] bg-helpe r2 border rounded-xl"></Link>
-          <Link  href='/products/1' style={{minHeight:200}} className="col-span-1 h-[270px] md:h-[300px] bg-helpe r2 border rounded-xl"></Link>
-          <Link  href='/products/1' style={{minHeight:200}} className="col-span-1 h-[270px] md:h-[300px] bg-helpe r2 border rounded-xl"></Link>
-          <Link  href='/products/1' style={{minHeight:200}} className="col-span-1 h-[270px] md:h-[300px] bg-helpe r2 border rounded-xl"></Link>
-          <Link  href='/products/1' style={{minHeight:200}} className="col-span-1 h-[270px] md:h-[300px] bg-helpe r2 border rounded-xl"></Link>
-        </div>
-
+        <ProductsList/>
       </div>
     </div>
   )
