@@ -9,7 +9,7 @@ body {
 .navbar{
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(234, 234, 234, 0.75);
 }
 
 .index-bg{

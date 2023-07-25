@@ -10,6 +10,7 @@
     "push": "git add . && git commit -m \"update\" && git push origin main"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.15",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "next": "13.2.4",

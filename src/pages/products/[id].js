@@ -1,67 +1,21 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-
-import React, { useRef, useState } from "react";
-// Import Swiper React components
-
-// Import Swiper styles
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
-
-
-// import required modules
-import { EffectCoverflow, Pagination } from "swiper";
-
+import Image from "next/image";
 
 function Product() {
     return (
-        <div className=''>
-
-            <Swiper
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={1}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
-        pagination={true}
-        modules={[EffectCoverflow, Pagination]}
-    className="mySwiper"
-      >
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </SwiperSlide>
-      </Swiper>
-      <div className='h-[1000px]'></div>
+        <div className='flex bg-n navbar m-10 border container mx-auto w-full'>
+          <div className="w-[50%] py-10 px-10 flex">
+            <div className="flex flex-col gap-5">
+              <Image src='/product.webp' height={100} width={150}/>
+              <Image src='/product.webp' height={100} width={150}/>
+              <Image src='/product.webp' height={100} width={150}/>
+            </div>
+            <Image src='/product.webp' height={500} width={500}/>
+          </div>
+          <div className="w-[50%] px-20 py-20">
+            <h1 className="text-[30px] font-serif">Nike font 12</h1>
+            <p className="text-[20px] font-serif">Nike</p>
+            <p className="pt-5 text-[30px] font-serif"><span className="line-through">100</span> <span className="text-primary">99</span></p>
+          </div>
         </div>
     );
 }
