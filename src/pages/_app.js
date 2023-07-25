@@ -19,7 +19,7 @@ const brandFont = Yellowtail({
 
 
 export default function App({ Component, pageProps }) {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
   return(
     <>
       <Head>
