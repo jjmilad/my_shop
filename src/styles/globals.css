@@ -37,9 +37,9 @@ body {
 }
 .jj{
   box-shadow: .1px -0.6px 0.7px #eeeeee ,
-    -0.5px -3.7px 4.2px -0.4px #eeeeee ,
-    -3.7px -28.2px 32px -1.8px #eeeeee ,
-    -8.2px -63.2px 71.7px -2.5px #eeeeee ;
+  -0.5px -3.7px 4.2px -0.4px #eeeeee ,
+  -3.7px -28.2px 32px -1.8px #eeeeee ,
+  -8.2px -63.2px 71.7px -2.5px #eeeeee ;
 }
 
 :root {
@@ -53,4 +53,16 @@ body {
     -0.3px -2.1px 2.4px -0.8px hsl(black / 0.36),
     -0.7px -5.2px 5.9px -1.7px hsl(black / 0.36),
     -1.6px -12.6px 14.3px -2.5px hsl(black / 0.36);
+}
+
+.product-div{
+  @media only screen and (max-width: 640px) {
+    box-shadow: -2px 3px 47px -3px rgba(0,0,0,0.25);
+    -webkit-box-shadow: -2px 3px 47px -3px rgba(0,0,0,0.25);
+    -moz-box-shadow: -2px 3px 47px -3px rgba(0,0,0,0.25);
+  }
+}
+
+.product-sm-img{
+  box-sizing:border-box
 }
