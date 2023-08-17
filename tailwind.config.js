@@ -10,11 +10,12 @@ module.exports = {
   ],
   theme: {
     colors: {
-      primary: 'rgb(180,10,10)',
-      secondary: 'rgba(249,249,249,1)',
+      primary: '#0070f3',
+      secondary: '#f9fafb',
       helper: 'rgb(230,229,229)',
       helper2: 'rgb(242,242,242)',
-      
+      helper3: '#f7f7f7',
+    
       transparent: 'transparent',
       current: 'currentColor',
       'white': '#ffffff',

@@ -1,0 +1,17 @@
+{
+  "theme_color": "#000",
+  "background_color": "#fff",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "name": "My Store",
+  "short_name": "My Store",
+  "description": "Order high quality products",
+  "icons": [
+    {
+      "src": "/pwa.png",
+      "sizes": "492x492",
+      "type": "image/png"
+    }
+  ]
+}
