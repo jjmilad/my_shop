@@ -65,7 +65,7 @@ function Users() {
                             {
                                 usersList ? usersList.map((user)=>{
                                     return(
-                                        <User data={user} key={user.id} delete={deleteUserFromDb} key={user.id}/>
+                                        <User data={user} key={user.id} delete={deleteUserFromDb}/>
                                     )
                                 })
                                 : 
