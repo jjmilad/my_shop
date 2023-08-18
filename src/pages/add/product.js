@@ -1,12 +1,13 @@
 import SubmitButton from "@/components/Button";
 import Input from "@/components/Input";
 import Navbar from "@/components/Navbar";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IoAdd, IoReturnDownForward } from "react-icons/io5";
 import { auth } from "../../../firebase";
 import { useRouter } from "next/navigation";
 import { doc, getDoc } from "firebase/firestore";
 import { firestore } from "../../../firebase";
+import { IsAdminContext } from "../_app";
 
 function CustomField(){
     return(
@@ -21,17 +22,9 @@ function CustomField(){
     )
 }
 
-export async function AuthenticateUser(user, router){
-    if(user){
-        const userRef = doc(firestore, 'users', user.uid)
-        const userData = await getDoc(userRef)
-        if(userData.exists()){
-            if(!userData.data().isAdmin){
-                router.push('/')
-            }
-        }
-    }
-    else{
+export async function AuthenticateUser(router){
+    const isAdminContext = useContext(IsAdminContext)
+    if(!isAdminContext.isAdmin){
         router.push('/')
     }
 }
@@ -40,7 +33,7 @@ function Product() {
     //authentication
     const router = useRouter()
     const user = auth.currentUser
-    AuthenticateUser(user, router)
+    AuthenticateUser(router)
     //end of authentication
 
     const [customFieldData, setCustomFieldData] = useState()

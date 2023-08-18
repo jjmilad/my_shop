@@ -2,9 +2,8 @@ import '@/styles/reset.css'
 import '@/styles/globals.css'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import { createContext, useState } from 'react'
-import { doc, getDoc } from "firebase/firestore";
-import { auth, firestore } from '../../firebase'
+import { createContext, useEffect, useState } from 'react'
+import { auth } from '../../firebase'
 import { onAuthStateChanged } from 'firebase/auth'
 
 const font = Inter({ subsets: ['latin'] })
@@ -13,24 +12,20 @@ export const IsAdminContext = createContext()
 
 export default function App({ Component, pageProps }) {
   const [isAdmin, setIsAdmin] = useState()
+  const user = auth.currentUser
 
-  const isUserAdmin = async(user)=>{
-    if(user){
-      const userRef = doc(firestore, 'users', user.uid)
-      const userData = await getDoc(userRef)
-      if(userData.exists()){
-        if(userData.data().isAdmin){
-          setIsAdmin(true)
-        }
-        else{
-          setIsAdmin(false)
-        }
-      }
+  const checkAdminStatus = ()=>{
+    const ref = localStorage.getItem('isAdmin')
+    if(ref && ref === 'true'){
+      setIsAdmin(true)
+    }
+    else{
+      setIsAdmin(false)
     }
   }
 
   onAuthStateChanged(auth,(user)=>{
-    isUserAdmin(user)
+    checkAdminStatus()
   })
   
   return(
@@ -57,7 +52,7 @@ export default function App({ Component, pageProps }) {
         <meta name="twitter:image" content="/og.webp" />
       </Head>
       <main className={font.className}>
-        <IsAdminContext.Provider value={isAdmin}>
+        <IsAdminContext.Provider value={{isAdmin, setIsAdmin}}>
           <Component {...pageProps}/>
         </IsAdminContext.Provider>
       </main>

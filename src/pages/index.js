@@ -58,6 +58,13 @@ const getCollectionList = async (collectionName, setValue) => {
       setValue(newList)
   })
 }
+const getSalesData = async (setValue) => {
+  const coll = collection(firestore, 'salesData')
+  const result = onSnapshot(q, (doc) => {
+    console.log(doc.data())
+    setValue(newList)
+  })
+}
 
 export default function Home() {
   //authentication
@@ -75,14 +82,23 @@ export default function Home() {
   const [ordersCount, setOrdersCount] = useState()
   const [ordersList, setOrdersList] = useState()
 
+  /*
   useEffect(() => {
     //product table
-    getTableCount('products', setProductsCount)
     getCollectionList('products', setProductsList)
     //order table
-    getTableCount('orders', setOrdersCount)
     getCollectionList('orders', setOrdersList)
   },[]);
+
+  //products count
+  useEffect(()=>{
+    getTableCount('products', setProductsCount)
+  },[productsList])
+  //orders count
+  useEffect(()=>{
+    getTableCount('orders', setOrdersCount)
+  },[ordersList])
+  */
 
 
   return (
@@ -115,7 +131,7 @@ export default function Home() {
             {
               ordersList?.map((item)=>{
                 return(
-                  <Order data={item}/>
+                  <Order data={item} key={item}/>
                 )
               })
             }
@@ -203,7 +219,7 @@ export default function Home() {
           <ul className="px-6 py-4 pb-64 h-full flex flex-col gap-4 overflow-y-scroll">
             <TableColumnNames />
             {productsList?.map((item) => (
-              <Product data={item} open={(id) => {
+              <Product data={item} key={id} open={(id) => {
                 setProductPopUp(id);
               }} />
             ))}

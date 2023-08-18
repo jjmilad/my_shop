@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 function LogOut() {
     const router = useRouter()
     const logOut = ()=>{
+        localStorage.setItem('isAdmin', false)
         signOut(auth)
         router.push('/auth/signin')
     }

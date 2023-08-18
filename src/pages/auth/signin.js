@@ -1,22 +1,42 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import Link from "next/link";
 import { IoChevronForward } from "react-icons/io5";
-import { auth } from "../../../firebase";
+import { auth, firestore } from "../../../firebase";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
-
+import { useContext, useState } from "react";
+import { doc, getDoc } from "firebase/firestore";
+import { IsAdminContext } from "../_app";
 
 function Product() {
   const router = useRouter()
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
   const [errorMessage, setErrorMessage] = useState()
+  const isAdminContext = useContext(IsAdminContext)
+
+  const isUserAdmin = async(user)=>{
+    if(user){
+      const userRef = doc(firestore, 'users', user.uid)
+      const userData = await getDoc(userRef)
+      if(userData.exists()){
+        if(userData.data().isAdmin){
+          localStorage.setItem('isAdmin', true)
+          isAdminContext.setIsAdmin(true)
+        }
+        else{
+          localStorage.setItem('isAdmin', false)
+          isAdminContext.setIsAdmin(false)
+        }
+      }
+    }
+  }
 
   const SignIn = async()=>{
     signInWithEmailAndPassword(auth, email, password)
     .then((authData)=>{
       const user = authData.user
       if(user){
+        isUserAdmin(user)
         router.push('/')
       }
       else{

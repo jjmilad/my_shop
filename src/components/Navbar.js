@@ -47,7 +47,7 @@ function Navbar() {
             My Shop
           </Link>
 
-          {isAdminContext ? (
+          {isAdminContext.isAdmin ? (
             <ul className="flex justify-end md:gap-4 h-full items-center">
               <NavItem name="Ausloggen" link="/auth/logout" icon={IoLogOut} />
               <NavItem name="Benutzer" link="/users" icon={IoPerson} />
