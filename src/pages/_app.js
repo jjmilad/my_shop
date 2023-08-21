@@ -2,7 +2,7 @@ import '@/styles/reset.css'
 import '@/styles/globals.css'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import { createContext, useEffect, useState } from 'react'
+import { createContext, useState } from 'react'
 import { auth } from '../../firebase'
 import { onAuthStateChanged } from 'firebase/auth'
 

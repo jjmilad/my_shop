@@ -31,6 +31,12 @@ Plus, you could also add new features as you want since the backend is easy to e
     <li>Proper firestore security rules</li>
     <li>Configure sales table with orders table for getting real data</li>
 </ol>
+<h2>Tech Stack</h2>
+<ol>
+    <li>Next.js</li>
+    <li>Tailwind.css</li>
+    <li>Firebase</li>
+</ol>
 
 
 
