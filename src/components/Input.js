@@ -1,8 +1,8 @@
-function Input({ type, placeholder, label, value, setValue}) {
+function Input({ type, placeholder, label, value, setValue, name}) {
     return (
         <div className="">
             <label className="text-[14px]  font-medium text-[#555555]">{label}</label>
-            <input value={value} onChange={(e)=>setValue(e.target.value)} type={type} className="w-full border border-[#e0e1e4] focus:ring outline-none shadow-sm rounded-lg px-4 py-2 text-[14px]" placeholder={placeholder} />
+            <input name={name && name} value={value} onChange={(e)=>setValue(e.target.value)} type={type} className="w-full border border-[#e0e1e4] focus:ring outline-none shadow-sm rounded-lg px-4 py-2 text-[14px]" placeholder={placeholder} />
         </div>
     );
 }

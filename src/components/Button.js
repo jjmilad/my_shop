@@ -1,7 +1,7 @@
-function SubmitButton(props) {
+function Button(props) {
   return (
     <button
-      type="submit"
+      onClick={props.onClick}
       className="bg-primary shadow-md rounded-lg py-2 px-4 text-white text-[14px]"
     >
       {props.text}
@@ -9,4 +9,4 @@ function SubmitButton(props) {
   );
 }
 
-export default SubmitButton;
+export default Button;

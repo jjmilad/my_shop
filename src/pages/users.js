@@ -1,11 +1,29 @@
 import Navbar from "@/components/Navbar";
 import { IoTrash } from "react-icons/io5";
-import { AuthenticateUser } from "./add/product";
 import { useRouter } from "next/navigation";
 import { auth, firestore } from "../../firebase";
-import { useEffect, useState } from "react";
-import { collection, deleteDoc, doc, getDocs, query, where } from "firebase/firestore";
-import { deleteUser } from 'firebase/auth'
+import { useContext, useEffect, useState } from "react";
+import { collection, deleteDoc, doc, getDocs, getDoc, query, where } from "firebase/firestore";
+import { IsAdminContext } from "./_app";
+
+export async function AuthenticateUser(user, router, doubleCheck){
+    //double check improves secruity on some pages and decreases server usage in some other pages when not needed
+    const isAdminContext = useContext(IsAdminContext)
+    if(isAdminContext){
+        if (doubleCheck){
+            const userRef = doc(firestore, 'users', user.uid)
+            const userData = await getDoc(userRef)
+            if(userData.exists()){
+                if(!userData.data().isAdmin){
+                    router.push('/')
+                }
+            }
+        }
+    }
+    else{
+        router.push('/')
+    }
+}
 
 const User = (props)=>{
     return(
@@ -25,7 +43,7 @@ function Users() {
     //authentication
     const router = useRouter()
     const user = auth.currentUser
-    AuthenticateUser(router)
+    AuthenticateUser(user, router, true)
 
     const [usersList, setUsersList] = useState()
     const newList = []
@@ -45,9 +63,6 @@ function Users() {
         console.log(id)
         const userRef = doc(firestore, 'users', id)
         await deleteDoc(userRef)
-        .then(()=>{
-            deleteUser(id)
-        })
     }
 
     useEffect(()=>{
